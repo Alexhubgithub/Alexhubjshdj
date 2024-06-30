@@ -1,0 +1,53 @@
+local Library = loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
+
+local Window = Library.CreateLib("Alex Hub", "Ocean")
+
+local ScreenGui = Instance.new("ScreenGui") ScreenGui.Name = "ScreenGui" ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui") ScreenGui.ResetOnSpawn = false
+
+local Toggle = Instance.new("TextButton") Toggle.Name = "Toggle" Toggle.Parent = ScreenGui Toggle.BackgroundColor3 = Color3.fromRGB(0, 0, 0) Toggle.Position = UDim2.new(0, 0, 0.454706937, 0) Toggle.Size = UDim2.new(0, 90, 0, 38) Toggle.Font = Enum.Font.SourceSans Toggle.Text = "Open" Toggle.TextColor3 = Color3.fromRGB(248, 248, 248) Toggle.TextSize = 28.000 Toggle.Draggable = true Toggle.MouseButton1Click:connect(function() Library:ToggleUI() end) local Corner = Instance.new("UICorner") Corner.Name = "Corner" Corner.Parent = Toggle
+
+local Tab = Window:NewTab("Scripts")
+
+local Section = Tab:NewSection("Scripts")
+
+Section:NewButton("Infinite Yield", "ButtonInfo", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+end)
+
+Section:NewSlider("Walkspeed", "Makes You Fast", 500, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+
+Section:NewSlider("Jumppower", "Makes you Jump High", 500, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+end)
+
+Section:NewButton("Infinite Jump Cannot be turn Off", "Fly or Jump", function()
+    local InfiniteJumpEnabled = true game:GetService("UserInputService").JumpRequest:connect(function() 	if InfiniteJumpEnabled then 		game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping") 	end end)
+end)
+
+Section:NewButton("Nameless Admin", "ButtonInfo", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/FilteringEnabled/NamelessAdmin/main/Source"))()
+end)
+
+Section:NewButton("Owl Hub", "Silent Aim for Most shooting games", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/CriShoux/OwlHub/master/OwlHub.txt"))();
+end)
+
+Section:NewButton("Fly Gui V3", "Fly Like a Fairy", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/XNEOFF/FlyGuiV3/main/FlyGuiV3.txt"))()
+end)
+
+Section:NewButton("JulHub Only for Brookhaven", "Brookhaven", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/JulHubz/JulHub/main/JulHub"))()
+end)
+
+Section:NewButton("Aimbot", "Use it Lock", function()
+    loadstring(game:HttpGet("https://rentry.co/n55gmtpi/raw", true))()
+end)
+ 
+Section:NewButton("Ghost Hub", "Ghost Hub script", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/GhostPlayer352/Test4/main/GhostHub'))()
+end)
+
+local Tab = Window:NewTab("Credits") local Section = Tab:NewSection("Made By Alex Hub") Section:NewButton("Youtube: AlexHub", "youtube channel", function() print("Clicked") end) Frame.Parent.Active = true Frame.Parent.Draggable = true
